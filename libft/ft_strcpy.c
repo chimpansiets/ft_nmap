@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   ft_strcpy.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: tde-jong <tde-jong@student.codam.nl>         +#+                     */
+/*   By: svoort <svoort@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/19 14:52:51 by tde-jong       #+#    #+#                */
-/*   Updated: 2019/11/19 14:53:00 by tde-jong      ########   odam.nl         */
+/*   Created: 2019/01/09 13:17:42 by svoort         #+#    #+#                */
+/*   Updated: 2019/01/18 10:24:44 by svoort        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	main(void)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	pcap_setfilter(NULL, NULL);
-	return (0);
+	int i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }

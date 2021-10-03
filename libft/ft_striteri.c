@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   ft_striteri.c                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: tde-jong <tde-jong@student.codam.nl>         +#+                     */
+/*   By: svoort <svoort@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/19 14:52:51 by tde-jong       #+#    #+#                */
-/*   Updated: 2019/11/19 14:53:00 by tde-jong      ########   odam.nl         */
+/*   Created: 2019/01/12 11:39:43 by svoort         #+#    #+#                */
+/*   Updated: 2019/01/20 13:33:12 by svoort        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	main(void)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	pcap_setfilter(NULL, NULL);
-	return (0);
+	int i;
+
+	if (s != NULL && f != NULL)
+	{
+		i = 0;
+		while (s[i] != '\0')
+		{
+			f(i, &s[i]);
+			i++;
+		}
+	}
 }

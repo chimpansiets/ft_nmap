@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   ft_lstiter.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: tde-jong <tde-jong@student.codam.nl>         +#+                     */
+/*   By: svoort <svoort@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/19 14:52:51 by tde-jong       #+#    #+#                */
-/*   Updated: 2019/11/19 14:53:00 by tde-jong      ########   odam.nl         */
+/*   Created: 2019/01/18 12:35:22 by svoort         #+#    #+#                */
+/*   Updated: 2019/01/18 13:37:20 by svoort        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	main(void)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	pcap_setfilter(NULL, NULL);
-	return (0);
+	if (lst != NULL)
+	{
+		if (lst->next != NULL)
+			ft_lstiter(lst->next, f);
+		f(lst);
+	}
 }

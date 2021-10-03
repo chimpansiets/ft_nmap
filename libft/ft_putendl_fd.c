@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   ft_putendl_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: tde-jong <tde-jong@student.codam.nl>         +#+                     */
+/*   By: svoort <svoort@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/19 14:52:51 by tde-jong       #+#    #+#                */
-/*   Updated: 2019/11/19 14:53:00 by tde-jong      ########   odam.nl         */
+/*   Created: 2019/01/11 16:47:24 by svoort         #+#    #+#                */
+/*   Updated: 2019/01/18 13:46:52 by svoort        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	main(void)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	pcap_setfilter(NULL, NULL);
-	return (0);
+	if (s != NULL)
+	{
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
+	}
 }

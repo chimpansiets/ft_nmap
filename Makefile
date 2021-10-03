@@ -5,18 +5,18 @@
 #                                                      +:+                     #
 #    By: tde-jong <tde-jong@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/11/12 10:13:23 by tde-jong       #+#    #+#                 #
-#    Updated: 2019/11/19 15:03:29 by tde-jong      ########   odam.nl          #
+#    Created: 2019/11/12 10:13:23 by tde-jong      #+#    #+#                  #
+#    Updated: 2021/10/03 15:30:44 by svoort        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 include colors.mk
 
-NAME = c-base
+NAME = ft_nmap
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -Wunreachable-code $(INC_FLAGS) $(DEP_FLAGS)
-LDFLAGS =
-LDLIBS =
+CFLAGS = $(INC_FLAGS) $(DEP_FLAGS) -Wall -Werror -Wextra -Wunreachable-code 
+LDFLAGS = -L libft
+LDLIBS = -lft -lpcap
 
 VPATH = \
 	src

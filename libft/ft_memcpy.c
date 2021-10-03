@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   ft_memcpy.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: tde-jong <tde-jong@student.codam.nl>         +#+                     */
+/*   By: svoort <svoort@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/19 14:52:51 by tde-jong       #+#    #+#                */
-/*   Updated: 2019/11/19 14:53:00 by tde-jong      ########   odam.nl         */
+/*   Created: 2019/01/09 11:23:58 by svoort         #+#    #+#                */
+/*   Updated: 2019/01/18 10:28:06 by svoort        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	main(void)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	pcap_setfilter(NULL, NULL);
-	return (0);
+	size_t	i;
+	char	*cdst;
+	char	*csrc;
+
+	i = 0;
+	cdst = (char*)dst;
+	csrc = (char*)src;
+	while (i < n)
+	{
+		cdst[i] = csrc[i];
+		i++;
+	}
+	return (cdst);
 }

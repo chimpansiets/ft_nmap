@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   ft_memalloc_2d.c                                   :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: tde-jong <tde-jong@student.codam.nl>         +#+                     */
+/*   By: svoort <svoort@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/19 14:52:51 by tde-jong       #+#    #+#                */
-/*   Updated: 2019/11/19 14:53:00 by tde-jong      ########   odam.nl         */
+/*   Created: 2019/01/14 14:07:41 by svoort         #+#    #+#                */
+/*   Updated: 2019/01/18 14:08:52 by svoort        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	main(void)
+void	**ft_memalloc_2d(size_t n1, size_t n2)
 {
-	pcap_setfilter(NULL, NULL);
-	return (0);
+	void	**area;
+	int		i;
+
+	area = (void**)malloc(sizeof(char*) * n1);
+	i = 0;
+	while (i < (int)n1)
+		area[i++] = (char*)malloc(sizeof(char) * n2);
+	return (area);
 }
